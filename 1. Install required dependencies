@@ -1,0 +1,5 @@
+# Backend dependencies (in the backend folder)
+npm install express mysql2 bcryptjs jsonwebtoken cors
+
+# Frontend dependencies (in the frontend folder)
+npm install react-router-dom axios

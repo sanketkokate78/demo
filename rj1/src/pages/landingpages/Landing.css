@@ -1,0 +1,19 @@
+.hero-section {
+    min-height: 600px; /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    justify-content: center; /* Center items vertically */
+    text-align: left; /* Align text to the left */
+    background-color: aliceblue;
+    
+   
+}
+.hero-h1 {
+    margin-bottom: 20px; /* Space below the h1 */
+    font-size: 2.5rem; 
+}
+.hero-p {
+    margin-top: 0; /* Reset top margin if needed */
+    font-size: 1.2rem; /* Adjust font size if needed */
+}

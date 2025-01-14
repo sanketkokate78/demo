@@ -1,0 +1,56 @@
+.sidebar {
+    transition: width 0.3s; /* Smooth transition for width change */
+    background-color: #f8f9fa; /* Light background color */
+    height: 100vh; /* Full height */
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Ensure it stays above other content */
+    overflow: hidden; /* Hide overflow when collapsed */
+  }
+  
+  .sidebar.collapsed {
+    width: 80px; /* Width when collapsed */
+  }
+  
+  .sidebar .nav-link {
+    padding: 10px 15px; /* Padding for links */
+    color: #333; /* Link color */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #e2e6ea; /* Background color on hover */
+  }
+  
+  .sidebar .nav-link.active {
+    background-color: #007bff; /* Active link background color */
+    color: white; /* Active link text color */
+  }
+  
+  .sidebar .d-flex {
+    align-items: center; /* Center items vertically */
+  }
+  
+  .sidebar img {
+    transition: width 0.3s; /* Smooth transition for logo size */
+  }
+  
+  .sidebar.collapsed img {
+    width: 30%; /* Smaller logo when collapsed */
+  }
+
+
+  .accordion-body {
+    padding: 0;
+    border: none;
+    
+  }
+  
+  .accordion-body .nav-link {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+   
+  }
+  
+ 

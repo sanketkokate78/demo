@@ -1,0 +1,55 @@
+.table td, .table th {
+    padding: 0.5rem; /* Adjust this value as needed */
+
+}
+
+
+.img-fluid {
+    width: 20px; /* Set the desired width */
+    height: 20px; /* Set the desired height */
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-right: 5px; /* Space between the image and the text */
+}
+
+.avatar {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    width: 40px; /* Set the desired width */
+    height: 40px; /* Set the desired height */
+    border-radius: 50%; /* Make the span circular */
+    background-color:chartreuse; /* Set a background color (optional) */
+    overflow: hidden; /* Ensure the image does not overflow */
+}
+
+.btn-label-secondary {
+    background-color: #f8f9fa; /* Light background color */
+    color: #6c757d; /* Secondary text color */
+    border: 1px solid #6c757d; /* Border color */
+    border-radius: 0.25rem; /* Rounded corners */
+    padding: 0.2rem 0.5rem;/* Padding for the button */
+    transition: background-color 0.2s; /* Smooth transition for background color */
+}
+
+.btn-label-secondary:hover {
+    background-color: #e2e6ea; /* Darker background on hover */
+}
+
+.status-active {
+    background-color: #1bdb48; /* Green for Active */
+    color: white; /* Text color */
+    border-radius: 12px; /* Rounded corners */
+    padding: 5px 10px; /* Padding for better appearance */
+    text-align: center; /* Center the text */
+    margin-left: 15px;
+}
+
+.status-inactive {
+    background-color: #d61327; /* Red for Inactive */
+    color: white; /* Text color */
+    border-radius: 12px; /* Rounded corners */
+    padding: 5px 10px; /* Padding for better appearance */
+    text-align: center; /* Center the text */
+    margin-left: 10px;
+}

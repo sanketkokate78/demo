@@ -1,0 +1,18 @@
+.dashboard-container {
+  display: flex; /* Use flexbox to align sidebar and content */
+  height: 95vh;
+  margin-top: 56px;
+}
+
+.dashboard-content {
+  transition: margin-left 0.3s; /* Smooth transition for margin change */
+  margin-left: 250px; /* Default margin for expanded sidebar */
+  padding: 20px; /* Add some padding */
+  flex-grow: 1; /* Allow content to grow */
+  background-color: #5f5f5f8c; 
+  min-height: calc(95vh - 56px);
+}
+
+.sidebar.collapsed + .dashboard-content {
+  margin-left: 80px; /* Adjust margin when sidebar is collapsed */
+}
