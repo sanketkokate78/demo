@@ -1,56 +1,60 @@
+/* Sidebar Styles */
 .sidebar {
-    transition: width 0.3s; /* Smooth transition for width change */
-    background-color: #f8f9fa; /* Light background color */
-    height: 100vh; /* Full height */
-    position: fixed; /* Fixed positioning */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    z-index: 1000; /* Ensure it stays above other content */
-    overflow: hidden; /* Hide overflow when collapsed */
-  }
-  
-  .sidebar.collapsed {
-    width: 80px; /* Width when collapsed */
-  }
-  
-  .sidebar .nav-link {
-    padding: 10px 15px; /* Padding for links */
-    color: #333; /* Link color */
-    text-align: left; /* Align text to the left */
-  }
-  
-  .sidebar .nav-link:hover {
-    background-color: #e2e6ea; /* Background color on hover */
-  }
-  
-  .sidebar .nav-link.active {
-    background-color: #007bff; /* Active link background color */
-    color: white; /* Active link text color */
-  }
-  
-  .sidebar .d-flex {
-    align-items: center; /* Center items vertically */
-  }
-  
-  .sidebar img {
-    transition: width 0.3s; /* Smooth transition for logo size */
-  }
-  
-  .sidebar.collapsed img {
-    width: 30%; /* Smaller logo when collapsed */
-  }
+  width: 250px; /* Fixed width for large screens */
+  height: 100vh;
+  background-color:#F5F5F5;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  transition: transform 0.3s ease-in-out;
+  z-index: 2;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.295); 
+}
 
+.sidebar::-webkit-scrollbar {
+  width: 5px; /* set scrollbar width */
+  
+}
 
-  .accordion-body {
-    padding: 0;
-    border: none;
+/* Hide sidebar on small screens */
+@media (max-width: 768px) {
+  .sidebar {
+    top: 0;
+    left: -250px; /* Hide the sidebar by default on small screens */
     
   }
-  
-  .accordion-body .nav-link {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-   
+  .sidebar.visible {
+    left: 0; 
+    background-color:darkgray;
   }
+  .close-btn {
+    display: block !important;
+  }
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: brown;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+
+/* .nav-link {
+  color:#1e1e2c;
   
- 
+} */
+
+.nav-link {
+  color:#343A40;
+  
+}
+
+.icon-manage{
+  padding-right: 8px;
+}

@@ -86,37 +86,6 @@ const AdminSignIn = ({ setToken }) => {
 </section>
   );
 
-
-
-
-
-
-
-
-
-
-  //   <div>
-  //     <h2>Admin Sign In</h2>
-  //     <form onSubmit={handleSubmit}>
-  //       <input
-  //         type="text"
-  //         placeholder="username"
-  //         value={username}
-  //         onChange={(e) => setusername(e.target.value)}
-  //         required
-  //       />
-  //       <input
-  //         type="password"
-  //         placeholder="Password"
-  //         value={password}
-  //         onChange={(e) => setPassword(e.target.value)}
-  //         required
-  //       />
-  //       <button type="submit">Log in</button>
-  //     </form>
-  //     {message && <p>{message}</p>}
-  //   </div>
-  // );
 };
 
 export default AdminSignIn;

@@ -1,203 +1,197 @@
-// import React, { useState } from 'react';
-// import { Nav, NavDropdown ,  Card  } from 'react-bootstrap';
-// import Accordion from 'react-bootstrap/Accordion';
-// import { Link } from 'react-router-dom';
-// import { Button } from 'react-bootstrap';
-// import logo from '../../../assets/logo.png'
-// import './SideBar.css'
+import React, { useState } from "react";
+import { Nav } from "react-bootstrap";
 
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import logo from "../../../assets/logo.png";
+import "./SideBar.css";
 
+const Sidebar = ({ isSidebarVisible, closesidebar }) => {
+  const [isDriverSectionOpen, setIsDriverSectionOpen] = useState(false);
+  const [isVehicleSectionOpen, setIsVehicleSectionOpen] = useState(false);
 
-// const Sidebar = ({ setSidebarCollapsed, activeComponent,setActiveComponent }) => {
-//   const [isCollapsed, setIsCollapsed] = useState(false);
-
-//   const toggleSidebar = () => {
-//     setIsCollapsed(!isCollapsed);
-//     setSidebarCollapsed(!isCollapsed);
-//   };
-
-//   const handleComponentSelect = (component) => {
-//     setActiveComponent(component);
-//   };
-
-
-//   const [activeKey, setActiveKey] = useState('');
-
-
-//   return (
-//     <div className={` flex-shrink-0 p-3   ${isCollapsed ? 'collapsed' : ''} sidebar`} style={{ width: isCollapsed ? '80px' : '250px'}}>
-
-//       <div className='d-flex align-items-center mb-0 mt-0'>
-//       <img src={logo} alt="Your Alt Text"  style={{ width: '40%', height: 'auto', marginLeft: '20px'}} />
-
-//       <Button variant="light" className=" btn-sm " 
-//       style={{ width: '40px', marginLeft: '10px'}} 
-//       onClick={toggleSidebar}>
-//         <i className={`bi ${isCollapsed ? 'bi-chevron-right ' : 'bi-chevron-left '}`}></i>
-//       </Button>
-
-//       </div>
-
-//       <Nav className="flex-column">
-//         <Nav.Link as={Link} to="/admin/dashboard" className="change" activeclassname="active">
-//           <i className="bi bi-house-fill icon-manage"></i> {!isCollapsed && 'Dashboard'}
-//         </Nav.Link>
-//         <Nav.Link as={Link} to="#" onClick={() => handleComponentSelect('ManageServices')}className="change" activeclassname="active">
-//           <i className="bi bi-table icon-manage"></i> {!isCollapsed && 'Manage Services'}
-//         </Nav.Link>
-//         <Nav.Link as={Link} to="#" onClick={() => setActiveComponent('ManageVehicles')} className="change" activeclassname="active">
-//           <i className="bi bi-car-front-fill icon-manage"></i> {!isCollapsed && 'Manage Vehicles'}
-//         </Nav.Link>
-//         <Nav.Link as={Link} to="#" onClick={() => setActiveComponent('ManageBookings')} className="change" activeclassname="active">
-//           <i className="bi bi-journal-check icon-manage"></i> {!isCollapsed && 'Manage Bookings'}
-//         </Nav.Link>
-//         <Nav.Link as={Link} to="/analytics" className="change" activeclassname="active">
-//           <i className="bi bi-people-fill icon-manage"></i> {!isCollapsed && 'Manage Customers'}
-//         </Nav.Link>
-
-       
-// <Accordion activeKey={activeKey} onSelect={(key) => setActiveKey(key)}>
-//           <Accordion.Item eventKey="manage-driver">
-//             <Accordion.Header className="change">
-//               <i className="bi bi-person icon-manage"></i> Manage Driver
-//             </Accordion.Header>
-//             <Accordion.Body className="accordion-body">
-//               <Nav className="flex-column">
-//                 <Nav.Link as={Link} to="/manage-driver/driver-list" className="nav-link">Driver List</Nav.Link>
-//                 <Nav.Link as={Link} to="/manage-driver/assign-vehicles-to-drivers" className="nav-link">Assign Vehicles To Drivers</Nav.Link>
-//                 <Nav.Link as={Link} to="/manage-driver/occupied-driver-list" className="nav-link">Driver Availablity</Nav.Link>
-//               </Nav>
-//             </Accordion.Body>
-//           </Accordion.Item>
-//         </Accordion>
-
-//         <Nav.Link as={Link} to="/analytics" className="change" activeclassname="active">
-//           <i className="bi bi-people-fill icon-manage"></i> {!isCollapsed && 'Manage Helpers'}
-//         </Nav.Link>
-//         <Nav.Link as={Link} to="/profile" className="change" activeclassname="active">
-//           <i className="bi bi-person icon-manage"></i> {!isCollapsed && 'Driver Availablity'}
-//         </Nav.Link>
-//         <Nav.Link as={Link} to="/profile" className="change" activeclassname="active">
-//           <i className="bi bi-tags icon-manage"></i> {!isCollapsed && 'Offers / Promocode'}
-//         </Nav.Link>
-//         <Nav.Link as={Link} to="/profile" className="change" activeclassname="active">
-//           <i className="bi bi-bell-fill icon-manage"></i> {!isCollapsed && 'Manage Notifications'}
-//         </Nav.Link>
-//         <Nav.Link as={Link} to="/profile" className="change" activeclassname="active">
-//           <i className="bi bi-journal-check icon-manage"></i> {!isCollapsed && 'Manage Contents'}
-//         </Nav.Link>
-//         <Nav.Link as={Link} to="/profile" className="change" activeclassname="active">
-//           <i className="bi bi-gear icon-manage"></i> {!isCollapsed && 'Manage Admin Settings'}
-//         </Nav.Link>
-       
-//       </Nav>
-//     </div>
-//   );
-// }
-
-// export default Sidebar;
-
-
-
-
-
-
-import React, { useState } from 'react';
-import { Nav } from 'react-bootstrap';
-import Accordion from 'react-bootstrap/Accordion';
-import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
-import logo from '../../../assets/logo.png'
-import './SideBar.css'
-
-
-
-const Sidebar = ({ setSidebarCollapsed}) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsCollapsed(!isCollapsed);
-    setSidebarCollapsed(!isCollapsed);
+  const toggleDriverSection = () => {
+    setIsDriverSectionOpen(!isDriverSectionOpen);
   };
 
- 
-
-  const [activeKey, setActiveKey] = useState('');
-
-
   return (
-    <div className={` flex-shrink-0 p-3   ${isCollapsed ? 'collapsed' : ''} sidebar`} style={{ width: isCollapsed ? '80px' : '250px'}}>
+    <div
+      className={`sidebar ${isSidebarVisible ? "visible" : ""}`}
+      onClick={closesidebar}
+    >
+      {/* <div
+  onclick={(e) => e.stopPropagation()}>
+    <button className='close-btn' onclick={closesidebar}>bi-chevron-right</button>
+</div> */}
 
-      <div className='d-flex align-items-center mb-0 mt-0'>
-      <img src={logo} alt="Your Alt Text"  style={{ width: '40%', height: 'auto', marginLeft: '20px'}} />
-
-      <Button variant="light" className=" btn-sm " 
-      style={{ width: '40px', marginLeft: '10px'}} 
-      onClick={toggleSidebar}>
-        <i className={`bi ${isCollapsed ? 'bi-chevron-right ' : 'bi-chevron-left '}`}></i>
-      </Button>
-
+      <div onClick={(e) => e.stopPropagation()}>
+        <Button
+          variant="light"
+          className="close-btn "
+          style={{ width: "40px", marginLeft: "10px" }}
+          onClick={closesidebar}
+        >
+          <i className="bi-chevron-left"></i>
+        </Button>
       </div>
 
-      <Nav className="flex-column">
-        <Nav.Link as={Link} to="/admin/dashboard" className="change" activeclassname="active">
-          <i className="bi bi-house-fill icon-manage"></i> {!isCollapsed && 'Dashboard'}
+      <img
+        src={logo}
+        alt="Your Alt Text"
+        style={{
+          width: "40%",
+          height: "auto",
+          marginLeft: "20px",
+          marginBottom: "20px",
+          marginTop: "10px",
+        }}
+      />
+
+      <Nav className="flex-column ">
+        <Nav.Link as={Link} to="/admin/dashboard" className="nav-link">
+          <i className="bi bi-house-fill icon-manage"></i>{" "}
+          <span>Dashboard</span>
         </Nav.Link>
-        <Nav.Link as={Link} to="/admin/dashboard/manageservices" className="change" activeclassname="active">
-          <i className="bi bi-table icon-manage"></i> {!isCollapsed && 'Manage Services'}
+        <Nav.Link
+          as={Link}
+          to="/admin/dashboard/manageservices"
+          className="nav-link"
+        >
+          <i className="bi bi-table icon-manage"></i>
+          <span>Manage Services</span>
         </Nav.Link>
-        <Nav.Link as={Link} to="/admin/dashboard/managevehicles" className="change" activeclassname="active">
-          <i className="bi bi-car-front-fill icon-manage"></i> {!isCollapsed && 'Manage Vehicles'}
+        <Nav.Link
+          as={Link}
+          to="/admin/dashboard/managevehicles"
+          className="nav-link"
+        >
+          <i className="bi bi-car-front-fill icon-manage"></i>
+          <span>Manage Vehicles</span>
         </Nav.Link>
-        <Nav.Link as={Link} to="/admin/dashboard/managebookings"  className="change" activeclassname="active">
-          <i className="bi bi-journal-check icon-manage"></i> {!isCollapsed && 'Manage Bookings'}
-        </Nav.Link>
-        <Nav.Link as={Link} to="/analytics" className="change" activeclassname="active">
-          <i className="bi bi-people-fill icon-manage"></i> {!isCollapsed && 'Manage Customers'}
+        <Nav.Link
+          as={Link}
+          to="/admin/dashboard/managebookings"
+          className="nav-link"
+        >
+          <i className="bi bi-journal-check icon-manage"></i>
+          <span>Manage Bookings</span>
         </Nav.Link>
 
-       
-<Accordion activeKey={activeKey} onSelect={(key) => setActiveKey(key)}>
-          <Accordion.Item eventKey="manage-driver">
-            <Accordion.Header className="change">
-              <i className="bi bi-person icon-manage"></i> Manage Driver
-            </Accordion.Header>
-            <Accordion.Body className="accordion-body">
-              <Nav className="flex-column">
-                <Nav.Link as={Link} to="/admin/dashboard/manage-driver/driver-list" className="nav-link">Driver List</Nav.Link>
-                <Nav.Link as={Link} to="/admin/dashboard/manage-driver/assign-vehicles-to-drivers" className="nav-link">Assign Vehicles To Drivers</Nav.Link>
-                <Nav.Link as={Link} to="/admin/dashboard/manage-driver/occupied-driver-list" className="nav-link">Driver Availablity</Nav.Link>
-              </Nav>
-            </Accordion.Body>
-          </Accordion.Item>
-        </Accordion>
+        {/* Collapsible Driver Section */}
+        <div className="nav-link change" onClick={toggleDriverSection}>
+          <i className="bi bi-person icon-manage"></i>
+          <span>Manage Driver</span>
+          <i
+            className={`bi ${
+              isDriverSectionOpen ? "bi-chevron-up" : "bi-chevron-down"
+            } ms-2`}
+          ></i>
+        </div>
 
-        <Nav.Link as={Link} to="/analytics" className="change" activeclassname="active">
-          <i className="bi bi-people-fill icon-manage"></i> {!isCollapsed && 'Manage Helpers'}
+        {/* Nested Driver Links */}
+        {isDriverSectionOpen && (
+          <ul>
+          <div className="collapsible-section">
+            <Nav.Link
+              as={Link}
+              to="/admin/dashboard/manage-driver/driver-list"
+              className="nav-link"
+            >
+              
+                <li>Driver List</li>
+              
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/admin/dashboard/manage-driver/assign-vehicles-to-drivers"
+              className="nav-link"
+            >
+                <li>
+                  Assign Vehicles To Drivers
+                </li>
+              
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/admin/dashboard/manage-driver/occupied-driver-list"
+              className="nav-link"
+            >
+              
+                <li>Driver Availability</li>
+              
+            </Nav.Link>
+          </div>
+          </ul>
+        )}
+
+        <Nav.Link
+          as={Link}
+          to="/admin/dashboard/managehelpers"
+          className="nav-link"
+        >
+          {" "}
+          <i className="bi bi-people-fill icon-manage"></i>
+          <span>Manage Helpers</span>
         </Nav.Link>
-        <Nav.Link as={Link} to="/profile" className="change" activeclassname="active">
-          <i className="bi bi-person icon-manage"></i> {!isCollapsed && 'Driver Availablity'}
+
+        {/* Collapsible Vehicle Section */}
+        <div
+          className="nav-link change"
+          onClick={() => setIsVehicleSectionOpen(!isVehicleSectionOpen)}
+        >
+          <i className="bi bi-car-front-fill icon-manage"></i>
+          <span>Manage Vehiclesss</span>
+          <i
+            className={`bi ${
+              isVehicleSectionOpen ? "bi-chevron-up" : "bi-chevron-down"
+            } ms-2`}
+          ></i>
+        </div>
+
+        {isVehicleSectionOpen && (
+          <div className="collapsible-section">
+            <ul>
+            <Nav.Link
+              as={Link}
+              to="/admin/dashboard/manage-vehicles/vehicle-types"
+              className="nav-link"
+            >
+              {/* <i className="bi bi-record-fill mx-3"></i>
+              <span>Vehicle Types</span> */}
+              <li>Vehicle Types</li>
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/admin/dashboard/manage-vehicles/vehicles"
+              className="nav-link"
+            >
+              {/* <i className="bi bi-record-fill mx-3"></i>
+              <span>Vehicles</span> */}
+              <li>Vehicles</li>
+            </Nav.Link>
+            </ul>
+          </div>
+        )}
+
+        <Nav.Link as={Link} to="/admin/dashboard" className="nav-link">
+          <i className="bi bi-tags icon-manage"></i>
+          <span>Offers / Promocode</span>
         </Nav.Link>
-        <Nav.Link as={Link} to="/profile" className="change" activeclassname="active">
-          <i className="bi bi-tags icon-manage"></i> {!isCollapsed && 'Offers / Promocode'}
+        <Nav.Link as={Link} to="/admin/dashboard" className="nav-link">
+          <i className="bi bi-bell-fill icon-manage"></i>
+          <span>Manage Notifications</span>
         </Nav.Link>
-        <Nav.Link as={Link} to="/profile" className="change" activeclassname="active">
-          <i className="bi bi-bell-fill icon-manage"></i> {!isCollapsed && 'Manage Notifications'}
+        <Nav.Link as={Link} to="/admin/dashboard" className="nav-link">
+          <i className="bi bi-journal-check icon-manage"></i>
+          <span>Manage Contents</span>
         </Nav.Link>
-        <Nav.Link as={Link} to="/profile" className="change" activeclassname="active">
-          <i className="bi bi-journal-check icon-manage"></i> {!isCollapsed && 'Manage Contents'}
+        <Nav.Link as={Link} to="/admin/dashboard" className="nav-link">
+          <i className="bi bi-gear icon-manage"></i>{" "}
+          <span>Manage Admin Settings</span>
         </Nav.Link>
-        <Nav.Link as={Link} to="/profile" className="change" activeclassname="active">
-          <i className="bi bi-gear icon-manage"></i> {!isCollapsed && 'Manage Admin Settings'}
-        </Nav.Link>
-       
       </Nav>
     </div>
   );
-}
+};
 
 export default Sidebar;
-
-
-
-

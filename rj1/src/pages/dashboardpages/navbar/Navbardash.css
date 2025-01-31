@@ -1,33 +1,9 @@
-
-.designnav {
-  position: fixed; /* Fix the navbar at the top */
-  top: 0; /* Align to the top */
-  left: 0; /* Align to the left */
-  right: 0; /* Align to the right */
-  z-index: 1000; /* Ensure it stays above other content */
-  background-color: #f8f9fa; /* Background color */
-  box-shadow: 0 0 0.375rem 0.25rem rgba(161, 172, 184, 0.15); /* Shadow for depth */
-  height: 56px;
-  /* margin-top: 15px; */
-}
-
-.navbar-space {
-  height: 15px; /* Adjust the height as needed */
-  background-color: #007bff; /* Change this to your desired color */
-}
-  .nav-link{
-    color:rgb(70, 66, 66);
-  }
-
-  .profile-image{
-    width: 40px; /* Adjust the size as needed */
-    height: 40px; /* Adjust the size as needed */
-    border-radius: 50%; /* Makes the image circular */
-    margin-right: 0px;
-    margin-left: 0px;
-  }
-  .dropdown-toggle::after {
-    display: none; /* Hide the default caret */
+.profile-image{
+  width: 40px; /* Adjust the size as needed */
+  height: 40px; /* Adjust the size as needed */
+  border-radius: 50%; /* Makes the image circular */
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
 .dropdown-menu {
@@ -47,7 +23,34 @@
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  -webkit-box-shadow: 0 6px 12px rgba(212, 24, 24, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 }
 
+.newnav {
+  position:absolute; /* Fix the navbar at the top */
+  top: 10px; /* Align to the top */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  border-radius: 5px;
+  display: flex;
+  /* background-color: rgba(128, 128, 128, 0.274);  */
+  background-color:#F5F5F5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.473); /* Shadow for depth */
+  height: 56px;
+  /* margin-top: 15px; */
+  flex-grow: 1; 
+  padding-left: 10%;
+  margin-left: 270px;
+  margin-right:20px;
+  transition: margin-left 0.3s; /* Smooth transition for margin change */
+}
+
+@media (max-width: 768px) {
+  .newnav{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    height: auto;
+  }
+}

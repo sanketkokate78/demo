@@ -88,36 +88,6 @@ const SignIn = ({ setToken }) => {
       </div>
     </section>
   
-
-
-
-
-
-
-    // <div className="container mt-5">
-    //   <h2>Sign In</h2>
-    //   <form onSubmit={handleSubmit} className="form-group">
-    //     <input
-    //       type="email"
-    //       className="form-control mb-2"
-    //       placeholder="Email"
-    //       value={email}
-    //       onChange={(e) => setEmail(e.target.value)}
-    //       required
-    //     />
-    //     <input
-    //       type="password"
-    //       className="form-control mb-2"
-    //       placeholder="Password"
-    //       value={password}
-    //       onChange={(e) => setPassword(e.target.value)}
-    //       required
-    //     />
-    //     <button type="submit" className="btn btn-primary">Sign In</button>
-    //   </form>
-    //   {message && <p className="text-danger">{message}</p>}
-    //   <p className="mt-3">Don't have an account? <Link to="/register">Register</Link></p>
-    // </div>
   );
 };
 
